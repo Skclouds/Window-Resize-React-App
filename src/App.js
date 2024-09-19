@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import useScreenSize from './Component/useScreenSize'; 
+import { useState,useEffect } from 'react';
+const ScreenSizeComponent = () => {
+    const screenSize = useScreenSize(); 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+        <div>
+            <h1>Screen Size</h1>
+            <p>Width: {screenSize.width}px</p>
+            <p>Height: {screenSize.height}px</p>
+        </div>
+    );
+};
 
-export default App;
+export default ScreenSizeComponent;
